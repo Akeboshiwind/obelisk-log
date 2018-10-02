@@ -5,7 +5,11 @@ Logs interesting data from an obelisk to a MySQL database
 ## Installation
 
 Todo: Look into releases.
-Todo: Create a sample docker-compose.yml
+
+## Docker
+
+A docker image is provided at `akeboshiwind/obelisk-log`.
+An example `docker-compose.yml` is included in the root of the repository.
 
 ## Usage
 

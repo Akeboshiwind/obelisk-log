@@ -1,0 +1,34 @@
+version: '3.5'
+
+services:
+  obelisk-log:
+    image: akeboshiwind/obelisk-log
+    container_name: obelisk-log
+    restart: always
+    networks: db
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_NAME=obelisk-logs
+      - DB_USER=admin
+      - DB_PASSWORD=admin
+      - REFRESH_RATE=1
+      - SERVER_ADDRESS=localhost
+      - AUTH_USER=db
+      - AUTH_PASSWORD=password
+      - PANEL_USER=admin
+      - AUTH_PASSWORD=admin
+      - TOKEN_REFRESH_RATE=20
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: always
+    networks: db
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_DATABASE=obelisk-logs
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+
+networks:
+  db:
