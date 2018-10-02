@@ -17,7 +17,7 @@ Expects the environment variables defined below.
 ## Environment variables
 
 Variable | Description | Default
--------- | ___________ | _______
+-------- | ----------- | -------
 DB_HOST | The host of the database | localhost
 DB_PORT | The port of the database | 3306
 DB_NAME | The MySQL database name | obelisk-logs
