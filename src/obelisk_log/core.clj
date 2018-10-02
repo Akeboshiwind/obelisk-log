@@ -38,7 +38,7 @@
     (doall
      (loop [opts opts]
        (let [request (api/dashboard opts)]
-         (if (= :unauthorized request)
+         (if (= :failed request)
            (do
              (println "Refreshing cookie")
              (let [cookie (get-cookie)]

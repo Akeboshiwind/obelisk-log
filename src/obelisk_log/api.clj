@@ -26,8 +26,8 @@
                            {:basic-auth basic-auth
                             :keep-alive 3000
                             :headers {"Cookie" cookie}})]
-    (if (= (:status response) 401)
-      :unauthorized ;; Don't like, what would be a better solution?
+    (if (not= (:status response) 200)
+      :failed ;; Don't like, what would be a better solution?
       (->> response
            :body
            (parse-string true)))))
