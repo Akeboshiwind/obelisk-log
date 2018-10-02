@@ -22,5 +22,3 @@
 (def panel-user (or (env :panel-user) "admin"))
 
 (def panel-password (or (env :panel-password) "admin"))
-
-(def token-refresh-rate (or (env :token-refresh-rate) 20))

@@ -32,7 +32,6 @@ AUTH_USER | The username for the basic auth login for the panel | db
 AUTH_PASSWORD | The password for the basic auth login for the panel | password
 PANEL_USER | The username for the panel | admin
 AUTH_PASSWORD | The password for the panel | admin
-TOKEN_REFRESH_RATE | The time between refreshed of the authentication token | 20
 
 ## License
 

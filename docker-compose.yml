@@ -18,7 +18,6 @@ services:
       - AUTH_PASSWORD=password
       - PANEL_USER=admin
       - AUTH_PASSWORD=admin
-      - TOKEN_REFRESH_RATE=20
   mysql:
     image: mysql
     container_name: mysql

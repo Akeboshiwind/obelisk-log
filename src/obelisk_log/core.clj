@@ -36,22 +36,19 @@
     (db/migrate db/config)
 
     (doall
-     (loop [opts opts
-            time (t/epoch)] ; To get the cookie on the first run
-       (if (t/after? (t/now) time)
-         (do
-           (println "Refreshing cookie")
-           (let [cookie (get-cookie)]
-             (recur (assoc opts :cookie cookie)
-                    (get-timeout))))
-         (do
-           (println "Logging")
-           (let [data (dashboard->data (api/dashboard opts))
-                 date (f/unparse output-formatter (t/now))]
-             (db/add-log db/db
-                         (assoc data :date date)))
-
-           (println "Sleeping")
-           (Thread/sleep (* env/refresh-rate 1000))
-           (recur opts
-                  time)))))))
+     (loop [opts opts]
+       (let [request (api/dashboard opts)]
+         (if (= :unauthorized request)
+           (do
+             (println "Refreshing cookie")
+             (let [cookie (get-cookie)]
+               (recur (assoc opts :cookie cookie))))
+           (do
+             (println "Logging")
+             (let [data (dashboard->data request)
+                   date (f/unparse output-formatter (t/now))]
+               (db/add-log db/db
+                           (assoc data :date date)))
+             (println "Sleeping")
+             (Thread/sleep (* env/refresh-rate 1000))
+             (recur opts))))))))
