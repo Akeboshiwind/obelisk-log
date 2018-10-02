@@ -11,7 +11,7 @@
 
 (def db-password (or (env :db-password) "admin"))
 
-(def refresh-rate (or (env :refresh-rate) 1))
+(def refresh-rate (or (env :refresh-rate) 5))
 
 (def server-address (or (env :server-address) "localhost"))
 

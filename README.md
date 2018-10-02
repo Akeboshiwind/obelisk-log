@@ -4,7 +4,7 @@ Logs interesting data from an obelisk to a MySQL database
 
 ## Installation
 
-Todo: Look into releases.
+Todo: Look into github releases.
 
 ## Docker
 
@@ -26,7 +26,7 @@ DB_PORT | The port of the database | 3306
 DB_NAME | The MySQL database name | obelisk-logs
 DB_USER | The username for the database | admin
 DB_PASSWORD | The password for the database (recommended to change) | admin
-REFRESH_RATE | The time between polls of the dashboard (in seconds) | 1
+REFRESH_RATE | The time between polls of the dashboard (in seconds) | 5
 SERVER_ADDRESS | The address for the webpanel of the obelisk | localhost
 AUTH_USER | The username for the basic auth login for the panel (leave blank if not using) | db
 AUTH_PASSWORD | The password for the basic auth login for the panel (leave blank if not using) | password
