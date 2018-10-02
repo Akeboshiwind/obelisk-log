@@ -5,7 +5,6 @@ Logs interesting data from an obelisk to a MySQL database
 ## Installation
 
 Todo: Look into releases.
-Todo: Put up on Dockerhub.
 Todo: Create a sample docker-compose.yml
 
 ## Usage
