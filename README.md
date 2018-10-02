@@ -28,8 +28,8 @@ DB_USER | The username for the database | admin
 DB_PASSWORD | The password for the database (recommended to change) | admin
 REFRESH_RATE | The time between polls of the dashboard (in seconds) | 1
 SERVER_ADDRESS | The address for the webpanel of the obelisk | localhost
-AUTH_USER | The username for the basic auth login for the panel | db
-AUTH_PASSWORD | The password for the basic auth login for the panel | password
+AUTH_USER | The username for the basic auth login for the panel (leave blank if not using) | db
+AUTH_PASSWORD | The password for the basic auth login for the panel (leave blank if not using) | password
 PANEL_USER | The username for the panel | admin
 PANEL_PASSWORD | The password for the panel | admin
 
