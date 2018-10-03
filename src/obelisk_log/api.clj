@@ -22,15 +22,15 @@
    {:keys [server-address
            basic-auth
            cookie]}]
-  (let [response (http/get (make-address server-address endpoint)
-                           {:basic-auth basic-auth
-                            :keep-alive 3000
-                            :headers {"Cookie" cookie}})]
+  (let [response @(http/get (make-address server-address endpoint)
+                            {:basic-auth basic-auth
+                             :keep-alive 3000
+                             :headers {"Cookie" cookie}})]
     (if (not= (:status response) 200)
       :failed ;; Don't like, what would be a better solution?
-      (->> response
-           :body
-           (parse-string true)))))
+      (-> response
+          :body
+          (parse-string true)))))
 
 (defn curr-user
   [opts]
