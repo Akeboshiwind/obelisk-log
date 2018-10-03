@@ -12,7 +12,7 @@ services:
       - DB_NAME=obelisk-logs
       - DB_USER=admin
       - DB_PASSWORD=admin
-      - REFRESH_RATE=1
+      - REFRESH_RATE=5
       - SERVER_ADDRESS=localhost
       - AUTH_USER=db
       - AUTH_PASSWORD=password
