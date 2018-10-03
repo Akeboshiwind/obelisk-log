@@ -38,8 +38,8 @@
          (if (= :failed request)
            (do
              (println "Refreshing cookie")
-             (let [cookie (api/login env/auth-user
-                                     env/auth-password opts)]
+             (let [cookie (api/login env/panel-user
+                                     env/panel-password opts)]
                (recur (assoc opts :cookie cookie))))
            (do
              (println "Logging")
