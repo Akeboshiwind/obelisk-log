@@ -5,6 +5,7 @@ Logs interesting data from an obelisk to a MySQL database
 ## Installation
 
 Todo: Look into github releases.
+Todo: Change Dockerfile to use a multistage build.
 
 ## Docker
 
