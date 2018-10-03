@@ -10,10 +10,14 @@
          :password env/db-password})
 
 (def config {:store :database
-             :migration-dir "migrations/"
+             :migration-dir "migrations"
              :db db})
 
+(def init migratus/init)
+
 (def migrate migratus/migrate)
+
+(def pending-list migratus/pending-list)
 
 (def create migratus/create)
 
