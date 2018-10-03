@@ -5,7 +5,10 @@ services:
     image: akeboshiwind/obelisk-log
     container_name: obelisk-log
     restart: always
-    networks: db
+    depends_on:
+      - mysql
+    networks:
+      - db
     environment:
       - DB_HOST=mysql
       - DB_PORT=3306
@@ -22,7 +25,8 @@ services:
     image: mysql
     container_name: mysql
     restart: always
-    networks: db
+    networks:
+      - db
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
       - MYSQL_DATABASE=obelisk-logs
