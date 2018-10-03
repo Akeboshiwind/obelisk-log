@@ -3,12 +3,9 @@
             [obelisk-log.db :as db]
             [clj-time.core :as t]
             [clj-time.format :as f]
-            [obelisk-log.env :as env])
+            [obelisk-log.env :as env]
+            [obelisk-log.utils :refer [parse-int]])
   (:gen-class))
-
-(defn parse-int [number-string]
-  (try (Integer/parseInt number-string)
-       (catch Exception e nil)))
 
 (defn dashboard->data
   [dashboard]
@@ -50,3 +47,18 @@
              (println "Sleeping")
              (Thread/sleep (* env/refresh-rate 1000))
              (recur opts))))))))
+
+(comment
+
+  (def opts {:server-address env/server-address
+             :basic-auth [env/auth-user
+                          env/auth-password]})
+
+  (def cookie (api/login env/panel-user
+                         env/panel-password opts))
+
+  (def opts (assoc opts :cookie cookie))
+
+  (def request (api/dashboard opts))
+
+  [])
