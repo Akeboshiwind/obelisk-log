@@ -2,7 +2,6 @@
   (:require [obelisk-log.api :as api]
             [obelisk-log.db :as db]
             [clj-time.core :as t]
-            [clj-time.coerce :refer [from-long]]
             [clj-time.format :as f]
             [obelisk-log.env :as env])
   (:gen-class))
@@ -28,9 +27,7 @@
   [& args]
   (let [opts {:server-address env/server-address
               :basic-auth [env/auth-user
-                           env/auth-password]}
-        get-cookie #(api/login env/auth-user env/auth-password opts)
-        get-timeout #(t/plus (t/now) (t/minutes env/token-refresh-rate))]
+                           env/auth-password]}]
 
     (println "Running database migrations")
     (db/migrate db/config)
@@ -41,7 +38,8 @@
          (if (= :failed request)
            (do
              (println "Refreshing cookie")
-             (let [cookie (get-cookie)]
+             (let [cookie (api/login env/auth-user
+                                     env/auth-password opts)]
                (recur (assoc opts :cookie cookie))))
            (do
              (println "Logging")
