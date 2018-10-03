@@ -26,8 +26,11 @@
               :basic-auth [env/auth-user
                            env/auth-password]}]
 
+    (println "Updates to run:")
+    (clojure.pprint/pprint (db/pending-list db/config))
+
     (println "Running database migrations")
-    (db/migrate db/config)
+    (println (db/migrate db/config))
 
     (doall
      (loop [opts opts]
