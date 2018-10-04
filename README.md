@@ -28,7 +28,7 @@ DB_NAME | The MySQL database name | obelisk-logs
 DB_USER | The username for the database | admin
 DB_PASSWORD | The password for the database (recommended to change) | admin
 REFRESH_RATE | The time between polls of the dashboard (in seconds) | 5
-SERVER_ADDRESS | The address for the webpanel of the obelisk | localhost
+SERVER_ADDRESS | The address for the webpanel of the obelisk | http://localhost
 AUTH_USER | The username for the basic auth login for the panel (leave blank if not using) | db
 AUTH_PASSWORD | The password for the basic auth login for the panel (leave blank if not using) | password
 PANEL_USER | The username for the panel | admin

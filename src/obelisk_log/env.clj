@@ -14,7 +14,7 @@
 
 (def refresh-rate (or (parse-int (env :refresh-rate)) 5))
 
-(def server-address (or (env :server-address) "localhost"))
+(def server-address (or (env :server-address) "http://localhost"))
 
 (def auth-user (or (env :auth-user) "db"))
 

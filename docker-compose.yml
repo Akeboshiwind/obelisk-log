@@ -16,7 +16,7 @@ services:
       - DB_USER=admin
       - DB_PASSWORD=admin
       - REFRESH_RATE=5
-      - SERVER_ADDRESS=localhost
+      - SERVER_ADDRESS=http://localhost
       - AUTH_USER=db
       - AUTH_PASSWORD=password
       - PANEL_USER=admin

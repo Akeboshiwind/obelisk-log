@@ -4,7 +4,7 @@
 
 (defn make-address
   [server-address endpoint]
-  (str "http://" server-address "/api" endpoint))
+  (str server-address "/api" endpoint))
 
 (defn login
   [username password {:keys [server-address
