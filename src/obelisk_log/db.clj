@@ -3,7 +3,7 @@
             [obelisk-log.env :as env]
             [migratus.core :as migratus]))
 
-(def db {:classname "com.mysql.jdbc.Driver"
+(def db {:classname "com.mysql.cj.jdbc.Driver"
          :subprotocol "mysql"
          :subname (str "//" env/db-host ":" env/db-port "/" env/db-name)
          :user env/db-user
